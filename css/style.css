@@ -71,6 +71,27 @@ body{
     border-radius: 10px;
 }
 
+/* pagina donación */
+
+.space{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-form{
+    background-color:bisque;
+    width: 470px;
+    border: solid rgb(94, 57, 8);
+    padding: 20px;
+    
+}
+
+.dis-column{
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width:600px){
 
 

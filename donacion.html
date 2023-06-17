@@ -44,87 +44,99 @@
   </nav>
 <!-- Fin de navbar -->
   <div id="tituloFormularioContainer">
-    <h1 id="tituloFormulario">Formulario de Datos</h1>
+    <h1 class="title" id="tituloFormulario">Formulario de Datos</h1>
   </div>
 
-  <form action="procesar_formulario.php" method="POST" id="miFormulario" onsubmit="return mostrarDatos(event)">
-    <label for="nombre" style="display: inline-block; width: 60px;">Nombre</label>
-    <input type="text" id="nombre" name="nombre" pattern="[A-Za-z]{1,15}" title="Ingrese un nombre válido de hasta 15 letras (solo letras)" required style="width: 70px;" oninput="soloLetras(event)"><br>
-    
-    <label for="apellido" style="display: inline-block; width: 60px;">Apellido</label>
-    <input type="text" id="apellido" name="apellido" pattern="[A-Za-z]+" title="Ingrese un apellido válido (solo letras)" required style="width: 70px;" oninput="soloLetras(event)"><br>
-    
-    <label for="profesion" style="display: inline-block; width: 60px;">Profesión</label>
-    <input type="text" id="profesion" name="profesion" pattern="[A-Za-z]{1,15}" title="Ingrese una profesión válida de hasta 15 letras (solo letras)" required oninput="soloLetras(event)"><br>
-    
-    <label for="telefono" style="display: inline-block; width: 60px;">Teléfono</label>
-    <input type="text" id="telefono" name="telefono" pattern="\d{4}-\d{4}" placeholder="xxxx-xxxx" required style="width: 70px;" oninput="formatoTelefono(event)"><br>
+<div class="space">
+  <div>
+    <form class="bg-form" action="procesar_formulario.php" method="POST" id="miFormulario" onsubmit="return mostrarDatos(event)">
+      <div class="dis-column">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" pattern="[A-Za-z]{1,15}" title="Ingrese un nombre válido de hasta 15 letras (solo letras)" required oninput="soloLetras(event)"><br>
+      </div>
+      <div class="dis-column">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" pattern="[A-Za-z]+" title="Ingrese un apellido válido (solo letras)" required  oninput="soloLetras(event)"><br>
+      </div>
+      <div class="dis-column">
+        <label for="profesion">Profesión</label>
+        <input type="text" id="profesion" name="profesion" pattern="[A-Za-z]{1,15}" title="Ingrese una profesión válida de hasta 15 letras (solo letras)" required oninput="soloLetras(event)"><br>
+      </div>
+      <div class="dis-column">
+        <label for="telefono">Teléfono</label>
+        <input type="text" id="telefono" name="telefono" pattern="\d{4}-\d{4}" placeholder="xxxx-xxxx" required  oninput="formatoTelefono(event)"><br>
+      </div>
+      <div class="dis-column">
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="text" id="fechaNacimiento" name="fechaNacimiento" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/aaaa" required oninput="formatoFecha(event)"><br>
+      </div>
+      <div class="dis-column">
+        <label for="documento">Documento de identidad:</label>
+        <input type="text" id="documento" name="documento" pattern="\d{2}\.\d{3}\.\d{3}" placeholder="xx.xxx.xxx" required  oninput="formatoDocumento(event)"><br>
+      </div> 
+      <div class="dis-column">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required><br>
+      </div>
+      <label>Elige el monto con el que deseas colaborar:</label><br>
+      <input type="radio" id="monto1" name="monto" value="1000" required>
+      <label for="monto1">1.000 (una vez)</label><br>
 
-    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-    <input type="text" id="fechaNacimiento" name="fechaNacimiento" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/aaaa" required oninput="formatoFecha(event)"><br>
+      <input type="radio" id="monto2" name="monto" value="2000" required>
+      <label for="monto2">2.000 (una vez)</label><br>
 
-    <label for="documento">Documento de identidad:</label>
-    <input type="text" id="documento" name="documento" pattern="\d{2}\.\d{3}\.\d{3}" placeholder="xx.xxx.xxx" required style="width: 70px;" oninput="formatoDocumento(event)"><br>
+      <input type="radio" id="monto3" name="monto" value="1000_mensual" required>
+      <label for="monto3">1.000 (mensualmente)</label><br>
 
-    <label for="correo">Correo electrónico</label>
-    <input type="email" id="correo" name="correo" required><br>
+      <input type="radio" id="monto4" name="monto" value="2000_mensual" required>
+      <label for="monto4">2.000 (mensualmente)</label><br>
 
-    <label>Elige el monto con el que deseas colaborar:</label><br>
-    <input type="radio" id="monto1" name="monto" value="1000" required>
-    <label for="monto1">1.000 (una vez)</label><br>
+      <label for="formaPago">Forma de Pago:</label><br>
+      <input type="radio" id="visaCredito" name="formaPago" value="Visa crédito" required>
+      <label for="visaCredito">Visa Crédito</label><br>
 
-    <input type="radio" id="monto2" name="monto" value="2000" required>
-    <label for="monto2">2.000 (una vez)</label><br>
+      <input type="radio" id="visaDebito" name="formaPago" value="Visa débito" required>
+      <label for="visaDebito">Visa Débito</label><br>
 
-    <input type="radio" id="monto3" name="monto" value="1000_mensual" required>
-    <label for="monto3">1.000 (mensualmente)</label><br>
+      <input type="radio" id="cabalCredito" name="formaPago" value="Cabal crédito" required>
+      <label for="cabalCredito">Cabal Crédito</label><br>
 
-    <input type="radio" id="monto4" name="monto" value="2000_mensual" required>
-    <label for="monto4">2.000 (mensualmente)</label><br>
+      <input type="radio" id="mastercard" name="formaPago" value="Mastercard" required>
+      <label for="mastercard">Mastercard</label><br>
 
-    <label for="formaPago">Forma de Pago:</label><br>
-    <input type="radio" id="visaCredito" name="formaPago" value="Visa crédito" required>
-    <label for="visaCredito">Visa Crédito</label><br>
+      <input type="radio" id="argencard" name="formaPago" value="Argencard" required>
+      <label for="argencard">Argencard</label><br>
 
-    <input type="radio" id="visaDebito" name="formaPago" value="Visa débito" required>
-    <label for="visaDebito">Visa Débito</label><br>
+      <input type="radio" id="naranja" name="formaPago" value="Naranja" required>
+      <label for="naranja">Naranja</label><br>
 
-    <input type="radio" id="cabalCredito" name="formaPago" value="Cabal crédito" required>
-    <label for="cabalCredito">Cabal Crédito</label><br>
-
-    <input type="radio" id="mastercard" name="formaPago" value="Mastercard" required>
-    <label for="mastercard">Mastercard</label><br>
-
-    <input type="radio" id="argencard" name="formaPago" value="Argencard" required>
-    <label for="argencard">Argencard</label><br>
-
-    <input type="radio" id="naranja" name="formaPago" value="Naranja" required>
-    <label for="naranja">Naranja</label><br>
-
-    <label for="numeroTarjeta">Número de Tarjeta o CBU:</label>
-    <input type="text" id="numeroTarjeta" name="numeroTarjeta" pattern="\d{16}" placeholder="16 números" required style="width: 120px;" oninput="validarNumeroTarjeta(event)"><br>
-    
-    <label for="comentarios">Comentarios (máximo 150 caracteres):</label><br>
-    <textarea id="comentarios" name="comentarios" rows="4" cols="50" maxlength="150" style="resize: none; word-wrap: break-word;"></textarea><br>
-    
-    <input type="submit" value="Enviar">
-  </form>
-  <div id="datosContainer" class="datos-container" style="display: none;">
-    <h2 class="datos-titulo">Datos ingresados:</h2>
-    <ul id="datosLista" class="datos-lista"></ul>
-    
-    <h3>¿Está seguro que desea enviarlo?</h3>
-    <button onclick="enviarDatos()">Sí</button>
-    <button onclick="cancelarEnvio()">No</button>
-  </div>
-
-  <div id="mensajeEnviado" class="mensaje-enviado" style="display: none;">
-    <div class="centrar">
-      <img src="mensajeanimado.gif" alt="Mensaje enviado">
-      <p id="mensajeExito"></p>
+      <div class="dis-column">
+      <label for="numeroTarjeta">Número de Tarjeta o CBU:</label>
+      <input type="text" id="numeroTarjeta" name="numeroTarjeta" pattern="\d{16}" placeholder="16 números" required style="width: 120px;" oninput="validarNumeroTarjeta(event)"><br>
+      </div>
+      <label for="comentarios">Comentarios (máximo 150 caracteres):</label><br>
+      <textarea id="comentarios" name="comentarios" rows="4" cols="50" maxlength="150" style="resize: none; word-wrap: break-word;"></textarea><br>
+      
+      <input type="submit" value="Enviar">
+    </form>
+    <div id="datosContainer" class="datos-container" style="display: none;">
+      <h2 class="datos-titulo">Datos ingresados:</h2>
+      <ul id="datosLista" class="datos-lista"></ul>
+      
+      <h3>¿Está seguro que desea enviarlo?</h3>
+      <button onclick="enviarDatos()">Sí</button>
+      <button onclick="cancelarEnvio()">No</button>
     </div>
-    <button onclick="return volverInicio()">Volver al inicio</button>
+
+    <div id="mensajeEnviado" class="mensaje-enviado" style="display: none;">
+      <div class="centrar">
+        <img src="mensajeanimado.gif" alt="Mensaje enviado">
+        <p id="mensajeExito"></p>
+      </div>
+      <button onclick="return volverInicio()">Volver al inicio</button>
+    </div>
   </div>
+</div>
 <!--  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  -->
 
 <!--  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  -->
