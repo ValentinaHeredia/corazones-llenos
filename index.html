@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hambre Cero</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+    <!-- Mi CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    
+    <title>Corazones llenos- página grupal</title>
 </head>
 <body>
 <!-- Inicio navbar -->
-    <nav>
-        <ul>
-            <li>
-                <a href="./index.html">Inicio</a>
-            </li>
-            <li>
-                <a href="./logros.html">Logros</a>
-            </li>
-            <li>
-                <a href="./nosotros.html">Nosotros</a>
-            </li>
-            <li>
-                <a href="./objetivos.html">Objetivos</a>
-            </li>
-            <li class="donacion">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfaqm4DfHI3vCpC4Lnr9_AMqQnU3unC0c7Qita10o6fpD6Slw/viewform?usp=sf_link" target="_blank">Dona aquí</a>
-            </li>
-        </ul>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light nav-font sticky-top bg-navbar">
+    <div class="container-fluid .bg-violet">
+        <a href="index.html">     
+        <img class="logo" src="img/logo.png" alt="logo" width="65px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="objetivos.html">Objetivos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logros.html">Logros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="donacion.html">Dona aquí</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <!-- Fin de navbar -->
     <main>
         <h1 class="title">Hambre Cero</h1>
@@ -47,5 +61,6 @@
         </div>
     </footer>
 <!-- Fin de footer -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

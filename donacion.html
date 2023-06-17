@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+    
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+  <!-- Mi CSS -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    
+  <title>Corazones llenos- página grupal</title>
+</head>
+<body>
+<!-- Inicio navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light nav-font sticky-top bg-navbar">
+    <div class="container-fluid .bg-violet">
+        <a href="index.html">     
+        <img class="logo" src="img/logo.png" alt="logo" width="65px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="objetivos.html">Objetivos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logros.html">Logros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="donacion.html">Dona aquí</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+<!-- Fin de navbar -->
+  <div id="tituloFormularioContainer">
+    <h1 id="tituloFormulario">Formulario de Datos</h1>
+  </div>
+
+  <form action="procesar_formulario.php" method="POST" id="miFormulario" onsubmit="return mostrarDatos(event)">
+    <label for="nombre" style="display: inline-block; width: 60px;">Nombre</label>
+    <input type="text" id="nombre" name="nombre" pattern="[A-Za-z]{1,15}" title="Ingrese un nombre válido de hasta 15 letras (solo letras)" required style="width: 70px;" oninput="soloLetras(event)"><br>
+    
+    <label for="apellido" style="display: inline-block; width: 60px;">Apellido</label>
+    <input type="text" id="apellido" name="apellido" pattern="[A-Za-z]+" title="Ingrese un apellido válido (solo letras)" required style="width: 70px;" oninput="soloLetras(event)"><br>
+    
+    <label for="profesion" style="display: inline-block; width: 60px;">Profesión</label>
+    <input type="text" id="profesion" name="profesion" pattern="[A-Za-z]{1,15}" title="Ingrese una profesión válida de hasta 15 letras (solo letras)" required oninput="soloLetras(event)"><br>
+    
+    <label for="telefono" style="display: inline-block; width: 60px;">Teléfono</label>
+    <input type="text" id="telefono" name="telefono" pattern="\d{4}-\d{4}" placeholder="xxxx-xxxx" required style="width: 70px;" oninput="formatoTelefono(event)"><br>
+
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input type="text" id="fechaNacimiento" name="fechaNacimiento" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/aaaa" required oninput="formatoFecha(event)"><br>
+
+    <label for="documento">Documento de identidad:</label>
+    <input type="text" id="documento" name="documento" pattern="\d{2}\.\d{3}\.\d{3}" placeholder="xx.xxx.xxx" required style="width: 70px;" oninput="formatoDocumento(event)"><br>
+
+    <label for="correo">Correo electrónico</label>
+    <input type="email" id="correo" name="correo" required><br>
+
+    <label>Elige el monto con el que deseas colaborar:</label><br>
+    <input type="radio" id="monto1" name="monto" value="1000" required>
+    <label for="monto1">1.000 (una vez)</label><br>
+
+    <input type="radio" id="monto2" name="monto" value="2000" required>
+    <label for="monto2">2.000 (una vez)</label><br>
+
+    <input type="radio" id="monto3" name="monto" value="1000_mensual" required>
+    <label for="monto3">1.000 (mensualmente)</label><br>
+
+    <input type="radio" id="monto4" name="monto" value="2000_mensual" required>
+    <label for="monto4">2.000 (mensualmente)</label><br>
+
+    <label for="formaPago">Forma de Pago:</label><br>
+    <input type="radio" id="visaCredito" name="formaPago" value="Visa crédito" required>
+    <label for="visaCredito">Visa Crédito</label><br>
+
+    <input type="radio" id="visaDebito" name="formaPago" value="Visa débito" required>
+    <label for="visaDebito">Visa Débito</label><br>
+
+    <input type="radio" id="cabalCredito" name="formaPago" value="Cabal crédito" required>
+    <label for="cabalCredito">Cabal Crédito</label><br>
+
+    <input type="radio" id="mastercard" name="formaPago" value="Mastercard" required>
+    <label for="mastercard">Mastercard</label><br>
+
+    <input type="radio" id="argencard" name="formaPago" value="Argencard" required>
+    <label for="argencard">Argencard</label><br>
+
+    <input type="radio" id="naranja" name="formaPago" value="Naranja" required>
+    <label for="naranja">Naranja</label><br>
+
+    <label for="numeroTarjeta">Número de Tarjeta o CBU:</label>
+    <input type="text" id="numeroTarjeta" name="numeroTarjeta" pattern="\d{16}" placeholder="16 números" required style="width: 120px;" oninput="validarNumeroTarjeta(event)"><br>
+    
+    <label for="comentarios">Comentarios (máximo 150 caracteres):</label><br>
+    <textarea id="comentarios" name="comentarios" rows="4" cols="50" maxlength="150" style="resize: none; word-wrap: break-word;"></textarea><br>
+    
+    <input type="submit" value="Enviar">
+  </form>
+  <div id="datosContainer" class="datos-container" style="display: none;">
+    <h2 class="datos-titulo">Datos ingresados:</h2>
+    <ul id="datosLista" class="datos-lista"></ul>
+    
+    <h3>¿Está seguro que desea enviarlo?</h3>
+    <button onclick="enviarDatos()">Sí</button>
+    <button onclick="cancelarEnvio()">No</button>
+  </div>
+
+  <div id="mensajeEnviado" class="mensaje-enviado" style="display: none;">
+    <div class="centrar">
+      <img src="mensajeanimado.gif" alt="Mensaje enviado">
+      <p id="mensajeExito"></p>
+    </div>
+    <button onclick="return volverInicio()">Volver al inicio</button>
+  </div>
+<!--  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  HTML  -->
+
+<!--  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  -->
+  <script>
+    
+    function soloNumeros(event) {
+      const input = event.target;
+      input.value = input.value.replace(/\D/g, '');
+    }
+
+    function soloLetras(event) {
+      const input = event.target;
+      input.value = input.value.replace(/[^A-Za-z]/g, '');
+    }
+
+    function formatoTelefono(event) {
+      const input = event.target;
+      let formattedValue = input.value.replace(/\D/g, '').substring(0, 8);
+      const hasHyphen = formattedValue.length > 4;
+      
+      if (hasHyphen) {
+        formattedValue = formattedValue.replace(/(\d{4})(\d{4})/, '$1-$2');
+        if (formattedValue.length > 9) {
+          formattedValue = formattedValue.substring(0, 9);
+        }
+      }
+      
+      input.value = formattedValue;
+    }
+
+    function formatoFecha(event) {
+      const input = event.target;
+      let formattedValue = input.value.replace(/\D/g, '').substring(0, 8);
+
+      if (formattedValue.length > 2) {
+        formattedValue = formattedValue.replace(/(\d{2})(\d{0,2})/, '$1/$2');
+      }
+
+      if (formattedValue.length > 5) {
+        formattedValue = formattedValue.replace(/(\d{2}\/\d{2})(\d+)/, '$1/$2');
+      }
+
+      input.value = formattedValue;
+    }
+
+    function formatoDocumento(event) {
+    const input = event.target;
+    let formattedValue = input.value.replace(/\D/g, '').substring(0, 8);
+    
+    if (formattedValue.length > 2) {
+      formattedValue = formattedValue.replace(/(\d{2})(\d{0,3})/, '$1.$2');
+    }
+    
+    if (formattedValue.length > 6) {
+      formattedValue = formattedValue.replace(/(\d{2}\.\d{3})(\d+)/, '$1.$2');
+    }
+    
+    input.value = formattedValue;
+    }
+
+    function validarNumeroTarjeta(event) {
+    const input = event.target;
+    const inputValue = input.value;
+    const formattedValue = inputValue.replace(/\D/g, '').substring(0, 16);
+
+    input.value = formattedValue;
+    }
+
+    function mostrarDatos(event) {
+      event.preventDefault(); // Evitar que el formulario se envíe
+
+      // Obtener los valores de los campos del formulario
+      var nombre = document.getElementById('nombre').value;
+      var apellido = document.getElementById('apellido').value;
+      var profesion = document.getElementById('profesion').value;
+      var telefono = document.getElementById('telefono').value;
+      var fechaNacimiento = document.getElementById('fechaNacimiento').value;
+      var documento = document.getElementById('documento').value;
+      var correo = document.getElementById('correo').value;
+      var monto = document.querySelector('input[name="monto"]:checked').value;
+      var formaPago = document.querySelector('input[name="formaPago"]:checked').value;
+      var numeroTarjeta = document.getElementById('numeroTarjeta').value;
+      var comentarios = document.getElementById('comentarios').value;
+
+      // Mostrar los valores en la lista de datos
+      document.getElementById('datosLista').innerHTML = `
+        <li>Nombre: ${nombre}</li>
+        <li>Apellido: ${apellido}</li>
+        <li>Profesión: ${profesion}</li>
+        <li>Teléfono: ${telefono}</li>
+        <li>Fecha de Nacimiento: ${fechaNacimiento}</li>
+        <li>Documento de Identidad: ${documento}</li>
+        <li>Correo electrónico: ${correo}</li>
+        <li>Monto a colaborar: ${monto}</li>
+        <li>Forma de Pago: ${formaPago}</li>
+        <li>Número de Tarjeta o CBU: ${numeroTarjeta}</li>
+        <li>Comentarios: ${comentarios}</li>
+      `;
+
+      // Mostrar el contenedor de datos y ocultar el formulario y la navbar
+      document.getElementById('miFormulario').style.display = 'none';
+      document.getElementById('datosContainer').style.display = 'block';
+      document.getElementById('navbar').classList.add('ocultar-navbar');
+    }
+
+    function enviarDatos() {
+      document.getElementById('datosContainer').style.display = 'none';
+      document.getElementById('mensajeEnviado').style.display = 'block';
+      document.getElementById('mensajeExito').textContent = '¡El formulario ha sido enviado exitosamente!';
+    }
+
+    function cancelarEnvio() {
+      document.getElementById('miFormulario').style.display = 'block';
+      document.getElementById('datosContainer').style.display = 'none';
+      document.getElementById('navbar').classList.remove('ocultar-navbar');
+    }
+
+    function volverInicio() {
+      window.location.href = 'index.html'; // Redirigir a la página de inicio
+      return false; // Evitar que se ejecute el evento submit nuevamente
+    }
+  </script>
+<!--  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  JAVA  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+
