@@ -100,6 +100,16 @@ body{
     flex-direction: column;
 }
 
+.input{
+    width: 424px;
+}
+
+/* pagina contactanos */
+
+.c{
+    margin-bottom: 300px;
+}
+
 /* pagina inicio */
 
 .inicio-caja{
@@ -117,6 +127,7 @@ body{
 .inicio-img{
     border: solid black;
     margin-top: 20px;
+    width: 90%;
 }
 
 /* Pagina objetivo */
@@ -172,6 +183,30 @@ body{
     margin: 20px;
 }
 
+/* pagina logros */
+
+.logros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 800px;
+    margin: 20px;
+}
+
+.cont-logros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logros-title{
+    font-size: 1.7em;
+    margin: 5px;
+}
+
+
 /* -------------RESPONSIVE------------ */
 @media (max-width:900px){
     .mision-contenedor{
@@ -206,6 +241,25 @@ body{
     .orient{
         width: 400px;;
     }
+
+    .inicio-caja{
+        margin: 30px 20% 75px 20%;
+        padding: 30px;
+        font-size: 1.2em;
+    }
+    
+    .inicio-contenedor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .inicio-img{
+        border: solid black;
+        margin-top: 20px;
+        width: 100%;
+    }
+    
 }
 
 @media (max-width:600px){
@@ -217,6 +271,9 @@ body{
     }
 
 /* Responsive pagina integrantes */
+    .c{
+        margin-bottom: 200px;
+    }
 
     .conteiner{
         display: flex;
@@ -243,7 +300,39 @@ body{
         font-size: 0.7em;
     }
 
+    .inicio-caja{
+        margin: 30px 5% 75px 5%;
+        padding: 30px;
+        font-size: 1em;
+    }
+    
+    .inicio-contenedor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .inicio-img{
+        border: solid black;
+        margin-top: 20px;
+        width: 100%;
+    }
+
 }
+
+@media (max-width:500px){
+    .bg-form{
+        background-color:bisque;
+        width: 300px;
+        border: solid rgb(94, 57, 8);
+        padding: 20px;
+        
+    }
+    .input{
+        width: 254px;
+    }
+}
+
 @media (max-width:400px){
 
     .title{
@@ -300,4 +389,5 @@ body{
     .mision-text{
         font-size: 1em;
     }
+    
 }
