@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     
-    <title>Corazones llenos- home</title>
+    <title>Corazones llenos- contacto</title>
 </head>
 <body>
 <!-- Inicio navbar -->
@@ -47,10 +47,25 @@
 </nav>
 <!-- Fin de navbar -->
     <main>
-        <h1 class="title">Hambre Cero</h1>
+        <h1 class="title">Contáctanos</h1>
         <br>
         <div class="text-cont">
-            <p class="text">Esta iniciativa de ayuda surge a partir de la motivación por marcar una diferencia significativa en las personas que transitan por situaciones de bajos recursos.</p>
+            <form action="envio.php">
+                <label for="">Nombre y apellido:</label>
+                <br>
+                <input type="text" id="nombre">
+                <br>
+                <label for="gmail">Email:</label>
+                <br>
+                <input type="email" id="email">
+                <br>
+                <label for="comentario">Descripción de su proyecto</label>
+                <br>
+                <textarea name="" id="comentario" cols="30" rows="10"></textarea>
+                <br>
+                <input class="transition" type="reset" value="Cancelar">
+                <input class="transition" type="submit" value="Enviar">
+            </form>
         </div>
     </main>
 
