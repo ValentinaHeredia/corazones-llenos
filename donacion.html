@@ -114,29 +114,30 @@
       <label for="naranja">Naranja</label><br>
 
       <div class="dis-column">
-      <label for="numeroTarjeta">Número de Tarjeta o CBU:</label>
+      <label for="numeroTarjeta">Número de Tarjeta:</label>
       <input type="text" id="numeroTarjeta" name="numeroTarjeta" pattern="\d{16}" placeholder="16 números" oninput="validarNumeroTarjeta(event)"><br>
       </div>
       <label for="comentarios">Comentarios (máximo 150 caracteres):</label><br>
-      <textarea class="input" id="comentarios" name="comentarios" rows="4" cols="50" style="resize: none; word-wrap: break-word;"></textarea><br>
+      <textarea class="input" id="comentarios" name="comentarios" rows="4" cols="50" maxlength="150" style="resize: none; word-wrap: break-word;"></textarea><br>
       
-      <input type="submit" value="Enviar">
+      <input class="button" type="submit" value="Enviar">
     </form>
-    <div id="datosContainer" class="datos-container" style="display: none;">
-      <h2 class="datos-titulo">Datos ingresados:</h2>
-      <ul id="datosLista" class="datos-lista"></ul>
-      
-      <h3>¿Está seguro que desea enviarlo?</h3>
-      <button onclick="enviarDatos()">Sí</button>
-      <button onclick="cancelarEnvio()">No</button>
+    <div class="bg-form footer-tipito">
+      <div id="datosContainer" class="datos-container" style="display: none;">
+        <h2 class="datos-titulo">Datos ingresados:</h2>
+        <ul id="datosLista" class="datos-lista"></ul>
+        
+        <h3>¿Está seguro que desea enviarlo?</h3>
+        <button class="button" onclick="enviarDatos()">Sí</button>
+        <button class="button" onclick="cancelarEnvio()">No</button>
+      </div>
     </div>
-
-    <div id="mensajeEnviado" class="mensaje-enviado" style="display: none;">
-      <div class="centrar">
+    <div class="bg-form footer-tipito" id="mensajeEnviado" class="mensaje-enviado" style="display: none;">
+      <div class="centrar tipito">
         <img src="mensajeanimado.gif" alt="Mensaje enviado">
         <p id="mensajeExito"></p>
       </div>
-      <button onclick="return volverInicio()">Volver al inicio</button>
+      <button class="button" onclick="return volverInicio()">Volver al inicio</button>
     </div>
   </div>
 </div>
