@@ -52,14 +52,23 @@
         <div class="space c">
             <div class="text-cont">
                 <form class="bg-form" id="myForm">
-                    <label for="nombre">Nombre y Apellido:</label><br>
+                    <label for="nombre">Nombre</label><br>
                     <input class="input" type="text" id="nombre" name="nombre" pattern="[A-Za-z\s]+" required oninput="soloLetras(event)"><br>
+                    <label for="apellido">Apellido:</label><br>
+                    <input class="input" type="text" id="apellido" name="apellido" pattern="[A-Za-z\s]+" required oninput="soloLetras(event)"><br>
                     <label for="email">Correo electrónico:</label><br>
                     <input class="input" type="email" id="email" name="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" required><br>
                     <label for="comentarios">Mensaje (máximo 150 caracteres):</label><br>
-                    <textarea class="input" id="mensaje" name="mensaje" rows="4" cols="50" style="resize: none; word-wrap: break-word;"></textarea><br>          
+                    <textarea class="input" id="mensaje" name="mensaje" rows="4" cols="50" style="resize: none; word-wrap: break-word;" maxlength="150" required ></textarea><br>          
                     <input type="submit" value="Enviar">
                 </form>
+            </div>
+            <div class="red-titulo">
+                <h3>Siguenos en nuestras redes sociales</h3>
+                <div class="redes">
+                    <a href="https://www.facebook.com/profile.php?id=100093557418492&_rdc=1&_rdr" target="_blank"><img src="img/logo-fb.png" alt="" width="75px"></a>
+                    <a href="http://www.instagram.com/comederobarrial/" target="_blank"><img src="img/logo-instagram.png" alt="" width="80px"></a>
+                </div>
             </div>
         </div>
     </main>
@@ -97,6 +106,7 @@
             <div>Molina Leila</div>
             <div>Proyecto desarrollo y diseño web</div>
             <img src="img/uade.png" alt="" width="100px">
+            <a class="sitio" href="https://valentinaheredia.github.io/proyecto-pagina/index.html">Sitio del grupo</a>
         </div>
     </footer>
 <!-- Fin de footer -->
